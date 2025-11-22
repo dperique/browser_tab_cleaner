@@ -1,0 +1,60 @@
+{
+  "configurable_sites": [
+    {
+      "name": "OpenShift Release Controller",
+      "patterns": [
+        "amd64.ocp.releases.ci.openshift.org",
+        "s390x.ocp.releases.ci.openshift.org",
+        "ppc64le.ocp.releases.ci.openshift.org",
+        "arm64.ocp.releases.ci.openshift.org"
+      ],
+      "match_type": "domain_contains",
+      "description": "OpenShift release controller pages - these show nightly builds and releases",
+      "enabled": true
+    },
+    {
+      "name": "Red Hat Jira",
+      "patterns": [
+        "issues.redhat.com"
+      ],
+      "match_type": "domain_contains",
+      "description": "Red Hat Jira tickets - clean up old ticket tabs",
+      "enabled": false
+    },
+    {
+      "name": "GitHub Pull Requests",
+      "patterns": [
+        "/pull/\\d+$"
+      ],
+      "match_type": "url_regex",
+      "description": "GitHub pull request pages - clean up old PRs",
+      "enabled": false
+    },
+    {
+      "name": "Monitoring Dashboards",
+      "patterns": [
+        "grafana",
+        "prometheus",
+        "dashboard"
+      ],
+      "match_type": "url_contains",
+      "description": "Various monitoring dashboard tabs",
+      "enabled": false
+    },
+    {
+      "name": "Slack Web Client",
+      "patterns": [
+        "app.slack.com"
+      ],
+      "match_type": "domain_exact",
+      "description": "Slack web client tabs - if you prefer desktop app",
+      "enabled": false
+    }
+  ],
+  "match_types": {
+    "domain_contains": "URL contains any of the specified domain patterns",
+    "domain_exact": "URL domain exactly matches one of the patterns (exact match)",
+    "url_contains": "Full URL contains any of the specified patterns",
+    "url_regex": "URL matches one of the regex patterns (advanced users)"
+  }
+}

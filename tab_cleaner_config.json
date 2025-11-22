@@ -1,0 +1,31 @@
+{
+  "configurable_sites": [
+    {
+      "name": "OpenShift Release Controller",
+      "patterns": [
+        "amd64.ocp.releases.ci.openshift.org",
+        "s390x.ocp.releases.ci.openshift.org",
+        "ppc64le.ocp.releases.ci.openshift.org",
+        "arm64.ocp.releases.ci.openshift.org"
+      ],
+      "match_type": "domain_contains",
+      "description": "OpenShift release controller pages - these show nightly builds and releases"
+    },
+    {
+      "name": "Example Additional Site",
+      "patterns": [
+        "example-monitoring.com",
+        "test-dashboard.org"
+      ],
+      "match_type": "domain_contains",
+      "description": "Example of how to add additional monitoring/dashboard sites",
+      "enabled": false
+    }
+  ],
+  "match_types": {
+    "domain_contains": "URL contains any of the specified domain patterns",
+    "domain_exact": "URL domain exactly matches one of the patterns",
+    "url_contains": "Full URL contains any of the specified patterns",
+    "url_regex": "URL matches one of the regex patterns"
+  }
+}
